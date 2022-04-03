@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+	</head>
+
+	<body>
+		<a-scene background="color:white">
+			<!--Camera-->
+			<a-camera position="0 8 15"></a-camera>
+
+            <a-entity
+            light="type: point; castShadow: true; color: #e6ca14 intensity: 100.35 distance: 1000" position="-4  14 -10">
+
+            </a-entity>
+
+<a-entity light="type: ambient"></a-entity>
+            <!--sky-->
+			<a-sky
+				src="https://blog.mystart.com/wp-content/uploads/IN_Night_Sky_5afef35da16770ec226a7a8d.jpeg"
+			></a-sky>
+
+			<!--Assets-->
+			<a-assets timeout="10000">
+				<!--girl-->
+				<a-asset-item id="girl" src="./assets/girl/scene.gltf"></a-asset-item>
+
+				<!--road-->
+				<a-asset-item id="road" src="./assets/road/scene.gltf"></a-asset-item>
+
+				<!--bench-->
+				<a-asset-item id="bench" src="./assets/bench/scene.gltf"></a-asset-item>
+
+				<!--light-->
+				<a-asset-item id="light" src="./assets/light/scene.gltf"></a-asset-item>
+			
+            <!--cat-->
+				<a-asset-item id="cat" src="./assets/cat/scene.gltf"></a-asset-item>
+
+            </a-assets>
+
+			<!--Girl-->
+			<a-entity>
+				<a-entity
+					position="-5 -1 -4"
+					rotation="0 0 0"
+					scale="0.04 0.04 0.04"
+					gltf-model="#girl"
+					shadow="cast: true;"
+				>
+				</a-entity>
+			</a-entity>
+
+			<!--road-->
+			<a-entity>
+				<a-entity
+					position="0 0 0"
+					rotation="0 55 0"
+					scale="0.2 0.5 0.5"
+					gltf-model="#road"
+                    shadow="receive: true"
+				></a-entity>
+			</a-entity>
+
+			<!--bench-->
+			<a-entity>
+				<a-entity
+					position="-1 1 -4"
+					rotation="0 145 0"
+					scale="0.02 0.02 0.02"
+					gltf-model="#bench"
+                    shadow="cast: true;"
+				></a-entity>
+
+                	<!--light-->
+			<a-entity>
+				<a-entity
+					position="-9 0 -13"
+					rotation="0 145 0"
+					scale="1 1 1"
+					gltf-model="#light"
+                    shadow="cast: true;"
+				></a-entity>
+			</a-entity>
+
+            <!--cat-->
+			<a-entity>
+				<a-entity
+					position="3 0 3"
+					rotation="0 0 0"
+					scale="0.3 0.3 0.3"
+					gltf-model="#cat"
+                    shadow="cast: true;"
+				></a-entity>
+			</a-entity>
+
+		</a-scene>
+	</body>
+</html>
